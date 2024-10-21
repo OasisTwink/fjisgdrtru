@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cat Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <img id="catImage" alt="Random Cat Image">
+    
+    <script>
+        // Replace 'YOUR_API_KEY' with the actual API key
+        const apiKey = 'YOUR_API_KEY';
+
+        // Fetch a random cat image from The Cat API
+        fetch(`https://api.thecatapi.com/v1/images/search?api_key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+                const imgElement = document.getElementById('catImage');
+                imgElement.src = data[0].url;
+            })
+            .catch(error => console.error('Error fetching the cat image:', error));
+    </script>
+</body>
+</html>
