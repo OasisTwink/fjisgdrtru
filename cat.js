@@ -1,6 +1,6 @@
 //change the limit to however many images to use
 const url = `https://api.thecatapi.com/v1/images/search?limit=20`;
-const api_key = "DEMO_API_KEY"
+const api_key = "live_4TqlAlQOa5pZ5StzJDzdK31BgqfS0fkSdYyqu5YEyizCWZCQRTs8iHoNDdRZXNg8"
 
  fetch(url,{headers: {
       'x-api-key': api_key
